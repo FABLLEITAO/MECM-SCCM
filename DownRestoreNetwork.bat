@@ -1,0 +1,1 @@
+xcopy %~dp0*.ps1 C:\Windows\<Path>\ /E /H /R /K /Y
