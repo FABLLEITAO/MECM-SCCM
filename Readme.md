@@ -10,7 +10,7 @@ RestoreNetwork.ps1 - Powershell Script to verify network configs and try to fix.
 
 01/25/2022 - Add-Script File (RestoreNetwork.ps1)
 
-01/25/2022 - Add-Batch File (DownRestoreNetwork.bat)
+01/25/2022 - Add-Batch File (CopyScriptToPath.bat)
 
 In soon - Add-Script File (IntelvPROProvisioning.ps1)
 
@@ -40,16 +40,14 @@ Generate individual logs or all the resources mentioned above, being possible to
 
 You can use all the features together or edit, split and use parts of the script as needed for your environment and modify it to your liking.
 
-## DownRestoreNetwork multiple use cases for SCCM Scripts -- see how to use here
+## CopyScriptToPath - Multiple use cases for SCCM Scripts -- see how to use here
 
-DownRestoreNetwork
 #### usage:
 
 Script to copy the powershell script to a new path location for use by Application created by SCCM/MECM in Software Center
 
 ## IntelvPROProvisioning SCCM Application -- see how to use here
 
-IntelvPROProvisioning
 #### usage:
 
 ### Developing...
