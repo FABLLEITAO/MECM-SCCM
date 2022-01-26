@@ -46,7 +46,7 @@ $h = $env:computername
 if($ipreversa -eq $ipZona){'Clean DNS' |Out-File $saida -Append} 
 else {'The host ' + $h +' is dirty in DNS: Zone - ' + $ipZona + ' / Reverse: ' + $ipreversa | Out-File $saida -Append}
  
-#SCCM check----------------------------------------------------------------------------------------------------------------------------------------------
+#SCCM Check----------------------------------------------------------------------------------------------------------------------------------------------
  
  
 if (Get-Process | Select-Object Name | Where-Object {$_.Name -eq 'ccmsetup'}){'SCCM - In the process of installing or updating.' | Out-File $saida -Append}
@@ -62,7 +62,7 @@ else {
     }
 }
  
-#FortiClient check---------------------------------------------------------------------------------------------------------------------------------------------
+#<SoftwareName> Check---------------------------------------------------------------------------------------------------------------------------------------------
  
 if(Get-Service -Name <SoftwareService>){
     if ((Get-Service | Select-Object Name,Status | Where-Object {$_.Name -eq '<SoftwareService>' -and $_.Status -eq 'Running'}) -like '*Running*'){'FortiClient OK.'|Out-File $saida -Append}
