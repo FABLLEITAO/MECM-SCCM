@@ -8,7 +8,8 @@ RestoreNetwork.ps1 - Powershell Script to verify network configs and try to fix.
 
 ### Last Update:
 
-01/25/2022 - Script (RestoreNetwork.py) upload to Github
+01/25/2022 - Add-Script File (RestoreNetwork.ps1)
+01/25/2022 - Add-Batch File (DownRestoreNetwork.bat)
 In soon - Script (IntelvPROProvisioning.py) upload to Github 
 
 ## RestoreNetwork SCCM Package Offline -- see how to use here
@@ -36,6 +37,15 @@ Generate individual logs or all the resources mentioned above, being possible to
 #### ~For all Cases:
 
 You can use all the features together or edit, split and use parts of the script as needed for your environment and modify it to your liking.
+
+## IntelvPROProvisioning SCCM Application -- see how to use here
+
+DownRestoreNetwork
+#### usage:
+
+Script to copy the powershell script to a new path location for use by Application created by SCCM/MECM in Software Center
+
+### Developing...
 
 ## IntelvPROProvisioning SCCM Application -- see how to use here
 
