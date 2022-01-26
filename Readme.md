@@ -3,9 +3,9 @@ Scripts for using with Applications, Packages or any automation software.
 RestoreNetwork.py - Powershell Script to verify network configs and try to fix.
 
 #######################
-Developed by:         #
-                      #
-Fábio Leitão          #
+Developed by:
+
+Fábio Leitão
 #######################
 Last Update:
 01/25/2022 - Script (RestoreNetwork.py) upload to Github
