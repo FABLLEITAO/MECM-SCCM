@@ -1,5 +1,7 @@
-
+#Ignore Error about RegKey not exists
 $ErrorActionPreference= 'silentlycontinue'
+
+#Create a LOG file with info generate by script
 $saida = 'C:\Windows\XXX\' + $env:computername + '.log'
  
 Get-Date |Out-File $saida
@@ -7,7 +9,7 @@ Get-Date |Out-File $saida
 '################################################################################################################################'|Out-File $saida -Append
 'Company Name - Technical support - Verify and Restore Network Connection'|Out-File $saida -Append
 '################################################################################################################################'|Out-File $saida -Append
-'Developed by ITBR Ops'|Out-File $saida -Append
+'Developed by <TeamName> Ops'|Out-File $saida -Append
 '################################################################################################################################'|Out-File $saida -Append
 ' '|Out-File $saida -Append
 
@@ -62,13 +64,13 @@ else {
  
 #FortiClient check---------------------------------------------------------------------------------------------------------------------------------------------
  
-if(Get-Service -Name FCT_SecSvr){
-    if ((Get-Service | Select-Object Name,Status | Where-Object {$_.Name -eq 'FCT_SecSvr' -and $_.Status -eq 'Running'}) -like '*Running*'){'FortiClient OK.'|Out-File $saida -Append}
-    else{'Out of default configuration - FortiClient Service Not Started.'|Out-File $saida -Append}
+if(Get-Service -Name <SoftwareService>){
+    if ((Get-Service | Select-Object Name,Status | Where-Object {$_.Name -eq '<SoftwareService>' -and $_.Status -eq 'Running'}) -like '*Running*'){'FortiClient OK.'|Out-File $saida -Append}
+    else{'Out of default configuration - <SoftwareName> Service Not Started.'|Out-File $saida -Append}
 }
 else
 {
-    'Out of default configuration - Does not contain FortiClient Antivirus installed.'|Out-File $saida -Append
+    'Out of default configuration - Does not contain <SoftwareName> Antivirus installed.'|Out-File $saida -Append
 }
  
 #________________________________________________________________________________________________________________________________________________________
@@ -116,13 +118,13 @@ Get-ItemProperty -Path HKLM:\Software\Policies\Microsoft\WindowsFirewall\DomainP
 }
 
 '################################################################################################################################'| Out-File $saida -Append
-'Resumo da conexao Ethernet:' |Out-File $saida -Append
+'Ethernet connection summary:' |Out-File $saida -Append
 ' '|Out-File $saida -Append
 
 
 #Restore and Check Connection__________________________________________________________________________________________________________________________________
 
-#Adptador Ethernet#
+#Ethernet adapter#
 
 if(Get-NetAdapter -Name "Ethernet"){
     if ((Get-NetAdapter | Select-Object Name,Status | Where-Object {$_.Name -eq 'Ethernet' -and $_.Status -eq 'Up'}) -like '*Up*'){'Connected Ethernet Network Adapter.'| Out-File $saida -Append}
@@ -140,7 +142,7 @@ if(Get-NetAdapter -Name "Ethernet"){
             }
 }
 
-#Adptador Ethernet 2#
+#Ethernet adapter 2#
 
 if(Get-NetAdapter -Name "Ethernet 2"){
     if ((Get-NetAdapter | Select-Object Name,Status | Where-Object {$_.Name -eq 'Ethernet 2' -and $_.Status -eq 'Up'}) -like '*Up*'){'Connected Ethernet Network Adapter.'| Out-File $saida -Append}
@@ -158,7 +160,7 @@ if(Get-NetAdapter -Name "Ethernet 2"){
             }
 }
 
-#Adptador Ethernet 3#
+#Ethernet adapter 3#
 
 if(Get-NetAdapter -Name "Ethernet 3"){
     if ((Get-NetAdapter | Select-Object Name,Status | Where-Object {$_.Name -eq 'Ethernet 3' -and $_.Status -eq 'Up'}) -like '*Up*'){'Connected Ethernet Network Adapter.'| Out-File $saida -Append}
@@ -176,7 +178,7 @@ if(Get-NetAdapter -Name "Ethernet 3"){
             }
 }
 
-#Adptador Ethernet 4#
+#Ethernet adapter 4#
 
 if(Get-NetAdapter -Name "Ethernet 4"){
     if ((Get-NetAdapter | Select-Object Name,Status | Where-Object {$_.Name -eq 'Ethernet 4' -and $_.Status -eq 'Up'}) -like '*Up*'){'Connected Ethernet Network Adapter.'| Out-File $saida -Append}
@@ -194,4 +196,5 @@ if(Get-NetAdapter -Name "Ethernet 4"){
             }
 }
 
+#Copy LOG File to UNC Path after finish the script
 Copy-Item -Path 'C:\Windows\xxx\*.log' -Destination '\\<ServerPath:\logs$' -Force
