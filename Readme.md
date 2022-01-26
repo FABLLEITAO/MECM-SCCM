@@ -12,7 +12,7 @@ RestoreNetwork.ps1 - Powershell Script to verify network configs and try to fix.
 
 01/25/2022 - Add-Batch File (DownRestoreNetwork.bat)
 
-In soon - Add-Script File (IntelvPROProvisioning.py)
+In soon - Add-Script File (IntelvPROProvisioning.ps1)
 
 ## RestoreNetwork SCCM Package Offline -- see how to use here
 
