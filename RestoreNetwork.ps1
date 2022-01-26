@@ -1,11 +1,11 @@
 
 $ErrorActionPreference= 'silentlycontinue'
-$saida = 'C:\Windows\CNX\' + $env:computername + '.log'
+$saida = 'C:\Windows\XXX\' + $env:computername + '.log'
  
 Get-Date |Out-File $saida
 ' '|Out-File $saida -Append
 '################################################################################################################################'|Out-File $saida -Append
-'Concentrix - Technical support - Verify and Restore Network Connection'|Out-File $saida -Append
+'Company Name - Technical support - Verify and Restore Network Connection'|Out-File $saida -Append
 '################################################################################################################################'|Out-File $saida -Append
 'Developed by ITBR Ops'|Out-File $saida -Append
 '################################################################################################################################'|Out-File $saida -Append
@@ -194,4 +194,4 @@ if(Get-NetAdapter -Name "Ethernet 4"){
             }
 }
 
-Copy-Item -Path 'C:\Windows\CNX\*.log' -Destination '\\mz-vv-dc-001\logs$' -Force
+Copy-Item -Path 'C:\Windows\xxx\*.log' -Destination '\\<ServerPath:\logs$' -Force
