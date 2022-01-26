@@ -40,14 +40,12 @@ Generate individual logs or all the resources mentioned above, being possible to
 
 You can use all the features together or edit, split and use parts of the script as needed for your environment and modify it to your liking.
 
-## IntelvPROProvisioning SCCM Application -- see how to use here
+## DownRestoreNetwork multiple use cases for SCCM Scripts -- see how to use here
 
 DownRestoreNetwork
 #### usage:
 
 Script to copy the powershell script to a new path location for use by Application created by SCCM/MECM in Software Center
-
-### Developing...
 
 ## IntelvPROProvisioning SCCM Application -- see how to use here
 
