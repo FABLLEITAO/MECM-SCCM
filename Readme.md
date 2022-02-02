@@ -12,6 +12,8 @@ RestoreNetwork.ps1 - Powershell Script to verify network configs and try to fix.
 
 01/25/2022 - Add-Batch File (CopyScriptToPath.bat)
 
+02/02/2022 - Add-Script File (Install_ComputerList_Scripts.ps1)
+
 In soon - Add-Script File (IntelvPROProvisioning.ps1)
 
 ## RestoreNetwork SCCM Package Offline -- see how to use here
@@ -46,10 +48,14 @@ You can use all the features together or edit, split and use parts of the script
 
 Script to copy the powershell script to a new path location for use by Application created by SCCM/MECM in Software Center
 
-## IntelvPROProvisioning SCCM Application -- see how to use here
+## Install_ComputerList_Scripts.ps1 -- see how to use here
 
 #### usage:
 
-### Developing...
+Script to install or run others scripts/Batch using PSEXEC for multiples computers in a from TXT file.
+
+## CleanCacheTeams.ps1 -- see how to use here
+
+#### usage:
 
 
