@@ -3,11 +3,11 @@
     $log = $date.ToString() + " - " + $hname + " - " + $msn
     #$log| Out-File C:\Temp\CommandLog.log -Append
     #$log| Out-File C:\Temp\CommandLogReg.log -Append
-    echo $log
+    Write-Output $log
 }
 ##########################################################################
 
-$computers = gc "C:\temp\computers.txt"
+$computers = Get-Content "C:\temp\computers.txt"
 
 foreach ($computer in $computers) {
     if (test-Connection $computer -Count 1 -quiet) {
